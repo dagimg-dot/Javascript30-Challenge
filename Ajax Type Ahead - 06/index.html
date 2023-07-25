@@ -52,6 +52,22 @@
     const searchInput = document.querySelector('.search');
     const suggestions = document.querySelector('.suggestions');
 
+    window.onscroll = () => {
+      console.log('scrolled')
+      myFunction();
+    }
+    
+    function myFunction() {
+      var offset = searchInput.offsetTop
+      if (window.pageYOffset >= offset) {
+        searchInput.classList.add("sticky")
+        console.log("sticky")
+      } else {
+        searchInput.classList.remove("sticky");
+        console.log("not sticky")
+      }
+    }
+
     searchInput.addEventListener('change', displayMatches)
     searchInput.addEventListener('keyup', displayMatches)
   </script>
