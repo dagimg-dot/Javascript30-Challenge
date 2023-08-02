@@ -10,7 +10,50 @@
 
 <body>
     <script>
+        const users = [{
+                id: 1,
+                name: 'John',
+                age: 35
+            },
+            {
+                id: 2,
+                name: 'Mary',
+                age: 25
+            },
+            {
+                id: 3,
+                name: 'Andrew',
+                age: 15
+            },
+            {
+                id: 4,
+                name: 'Peter',
+                age: 45
+            },
+            {
+                id: 5,
+                name: 'Anna',
+                age: 55
+            },
+        ]
 
+        // this means find if there is any user whose age is less than 18, so if it finds at least one it will return true
+        const isNotAllowed = users.some(user => user.age < 18)
+        console.log({
+            isNotAllowed
+        });
+
+        // this means find if all the users are greater than 18, but since all are not greater than 18 it returns false
+        const isAllowed = users.every(user => user.age > 18)
+        console.log({isAllowed});
+
+        // this means find a user whose age is less than 18. it returns the first one it finds or undefined it it doesn't find anything
+        const notAllowedUser = users.find(user => user.age < 18)
+        console.log({notAllowedUser});
+
+        // this is like the find method but this one returns the index of the found element
+        const getName = users.findIndex(user => user.name === "Anna")
+        console.log({getName});
     </script>
 </body>
 
